@@ -66,9 +66,9 @@ const greeting = (word) => {
   newArr.push(word);
   let modifiedArr = (allUpperCase(addExclamation(newArr)));
 
-  let newString = modifiedArr.toString();
-  return newString;
-
+  // let newString = modifiedArr.toString();
+  // return newString;
+  return modifiedArr[0];
 };
 
 console.log(greeting('uppercasestring'));
@@ -103,10 +103,17 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  let valueAdded = arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,7 +136,19 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let list = [];
+
+  availableItems.forEach((item) => {
+    console.log(item.available);
+    if (item.available === true){
+      list.push(item.name);
+    }
+  });
+
+  return list;
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
