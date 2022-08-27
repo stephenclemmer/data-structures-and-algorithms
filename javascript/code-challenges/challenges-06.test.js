@@ -59,7 +59,9 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  let firstNum = arr[0];
+  arr.push(firstNum);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,9 +80,25 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearborn = year;
 };
 
+// __________________________________
+// let object = new Object();
+// object.name = 'Stephen';
+// object.height = 5.75;
+// object.weight = 200;
+
+// console.log(object);
+
+
+// const addBirthYearProperty = (obj, year) => {
+// let newProperty = obj.yearborn = year;
+//  newObject =
+// };
+
+// console.log(addBirthYearProperty(object, 1980));
+// ____________________________________
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
