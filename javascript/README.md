@@ -1,3 +1,6 @@
+# Collaborators:
+Challenge 8, question 1: I referenced Luis Rosales' code to solve this question.
+
 # Data Structures and Algorithms
 
 ## Language: `JavaScript`
