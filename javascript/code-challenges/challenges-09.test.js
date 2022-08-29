@@ -138,7 +138,11 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.map((v) => {
+    houses.push(v.house);
+  });
   return houses;
+
 };
 
 /*------------------------------------------------------------------------------------------------
