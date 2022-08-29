@@ -159,16 +159,40 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  arr.forEach((person) => {
-    if (person.name === character) {
-      let values = Object.values(person);
-      return values.some(v => Array.isArray(v) ? hasChildren = true : false);
+  let result = false;
+// console.log(arr);
+
+  arr.forEach((object) => {
+    // console.log(object);
+    console.log(character);
+    if (object.name === character && object.children){
+      console.log('You found them!');
+      console.log(Object.values(object));
+      console.log(object.children);
+
+      result = true;
+
     }
   });
-  return hasChildren;
 
+  console.log(result);
 
 };
+
+
+
+
+  // _________________________
+//   arr.forEach((person) => {
+//     if (person.name === character) {
+//       let values = Object.values(person);
+//       return values.some(v => Array.isArray(v) ? hasChildren = true : false);
+//     }
+//   });
+//   return hasChildren;
+
+
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
