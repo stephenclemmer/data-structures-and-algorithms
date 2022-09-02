@@ -4,7 +4,7 @@ Part of growing as a programmer is to practice, practice, practice. Throughout t
 
 The daily challenges will be posted by the instructor at the end of lecture every day. Plan to focus on this task with your partner every day after class until 6 p.m., completing as much as possible during this time, then complete the remainder of the challenges on your own, as needed.
 
-## Challenge Execution and Testing
+## Challenge Execution and Testing.
 
 At the end of lecture each day, a new challenge will be published in Canvas. Copy the contents of the file into **this folder** in the `data-structures-and-algorithms` repository and work on the individual problems for the day. It's a good practice to add and commit regularly as you finish each problem in the day's challenge. When you are finished, push your branch to GitHub to create a PR.
 
