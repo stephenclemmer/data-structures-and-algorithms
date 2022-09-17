@@ -99,8 +99,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  let result = stores.reduce((a, b) => a.map((c, i) => c + b[i]));
+
+
+  return result;
 
 };
+
+grandTotal(cookieStores);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -113,8 +120,18 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  return data.map((v, i) => {
+    return {
+      sales: `${v} cookies`,
+      time: hours[i]
+    };
+  });
+
 };
+
+salesData(hoursOpen, cookieStores);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,7 +156,11 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity;
 };
+
+
+howManyTreats(errands);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
