@@ -175,14 +175,14 @@ const hasChildrenValues = (arr, character) => {
     }
   });
 
-  console.log(result);
+  return result;
 
 };
 
 
 
 
-  // _________________________
+// _________________________
 //   arr.forEach((person) => {
 //     if (person.name === character) {
 //       let values = Object.values(person);
