@@ -75,9 +75,12 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let reg = /\b[\w.!#$%&’*+\/=?^`{|}~-]+@[\w-]+(?:\.[\w-]+)*\b/;
-  let answer = reg.test(email);
-  return answer;
+  // let reg = /\b[\w.!#$%&’*+\/=?^`{|}~-]+@[\w-]+(?:\.[\w-]+)*\b/;
+  // let answer = reg.test(email);
+  // return answer;
+  let emailPattern =/^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+.(com|org|net)$/g;
+
+  return emailPattern.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,9 +105,13 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let reg = /^[+]?(\d{1,2})?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-  let answer = reg.test(phoneNumber);
-  return answer;
+  // let reg = /^[+]?(\d{1,2})?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+  // let answer = reg.test(phoneNumber);
+  // return answer;
+  let phonePattern = /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/g;
+
+  return phonePattern.test(phoneNumber);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
