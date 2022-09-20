@@ -1,3 +1,11 @@
+# Table of Contents:
+
+[array-reverse code challenge](./code-challenges/array-reverse.md)
+
+
+
+
+
 # Collaborators:
 Challenge 8, question 1: I referenced Luis Rosales' code to solve this question.
 
@@ -86,3 +94,7 @@ From the `data-structures-and-algorithms/javascript` folder, execute the followi
 #### Live Tests
 
 Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
+
+
+
+
