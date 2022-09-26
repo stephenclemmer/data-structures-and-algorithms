@@ -5,7 +5,7 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 ## Whiteboard Process
 ![array-binary-search-whiteboard](../assets/array-binary-search.png)
 
-## Approach & EfficiencyAt the time of this writing, we have not yet solved the problem. I intend to come back to this problem and get it solved once my lab is complete, but in the interest iof time I am submitting this assignment as is.
+## Approach & Efficiency: At the time of this writing, we have not yet solved the problem. I intend to come back to this problem and get it solved once my lab is complete, but in the interest iof time I am submitting this assignment as is.
 
 Our approach is as follows:
 1. find the array length and divide by 2, and round down to account for odd numbered arrays.
@@ -21,4 +21,4 @@ Our approach is as follows:
 10. While the index of the search no longer changes if the Search Key value has not been found, then break the loop and return -1.
 
 
-I can see at this point that to solve this, I weill be adding or subtracting the variables for length and the last two references. Once I work out the match, I know I can get this. 
+I can see at this point that to solve this, I weill be adding or subtracting the variables for length and the last two references. Once I work out the match, I know I can get this.
