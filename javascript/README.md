@@ -1,11 +1,12 @@
 # Table of Contents:
 
 [array-reverse code challenge](./code-challenges/array-reverse/array-reverse.md)
+
 [array-insert-shift code challenge](./code-challenges/array-insert-shift/array-insert-shift-README.md)
+
 [array-binary-search code challenge](./code-challenges/array-binary-search/array-binary-search.md)
 
-
-
+[linked-list data structures challenge](./code-challenges/linked-list/linked-list.md)
 
 
 # Collaborators:
