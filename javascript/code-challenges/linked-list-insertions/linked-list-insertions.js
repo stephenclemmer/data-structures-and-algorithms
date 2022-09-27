@@ -1,3 +1,5 @@
+'use strict'
+
 'use strict';
 
 class Node {
@@ -14,19 +16,6 @@ class LinkedList {
     this.length = 0;
   }
 
-  // INSERT - add node to the front of the linked list
-  insert(value) {
-    this.length++;
-
-    let node = new Node(value);
-    if (this.head) {
-      node.next = this.head;
-      this.head = node;
-      return node;
-    }
-    this.head = this.tail = node;
-    return node;
-  }
 
   // INCLUDES
   includes(value) {
@@ -56,6 +45,35 @@ class LinkedList {
     return string;
   }
 
+  // INSERT a node at the front of the linked list
+  insert(value) {
+    this.length++;
+
+    let node = new Node(value);
+    if (this.head) {
+      node.next = this.head;
+      this.head = node;
+      return node;
+    }
+    this.head = this.tail = node;
+    return node;
+  }
+
+  // APPEND: adds a node with a given value to the end of the linked list.
+
+  append(value) {
+    this.length++;
+
+    let node = new Node(value);
+    let current = this.head;
+
+    while (current.next !== null) {
+      current = current.next
+    }
+
+    current.next = node;
+  }
+
 }
 
 // let list = new LinkedList();
@@ -70,4 +88,4 @@ class LinkedList {
 // // console.log('this is it', booyah);
 // console.log(list.toString());
 
-module.exports = LinkedList;
+module.exports = { Node, LinkedList };
