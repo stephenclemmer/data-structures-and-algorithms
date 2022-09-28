@@ -105,12 +105,36 @@ class LinkedList {
         let node = new Node(newValue);
         node.next = current.next;
         current.next = node;
-        return
+        return;
       } else {
         current = current.next;
       }
     }
   }
+
+  kthFromEnd(k) {
+    // Find the length of the linked list
+    // subtract k from the number of nodes in the linked list
+    // travel down the linked list the remainder of times by setting a for loop for that number of times.
+    // create a node
+    // set the node as the new node at that location
+
+    if (!this.head) {
+      throw new Error('Linked List is Empty');
+    } else if (k > this.length) {
+      throw new Error('Linked List is Longer than Value');
+    }
+
+    let counter = k;
+
+
+
+    let (i = 0; i (current) {
+      if
+    }
+
+  }
+
 
 
 
