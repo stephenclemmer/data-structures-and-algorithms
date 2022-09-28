@@ -68,11 +68,51 @@ class LinkedList {
     let current = this.head;
 
     while (current.next !== null) {
-      current = current.next
+      current = current.next;
     }
 
     current.next = node;
   }
+
+  insertBefore(value, newValue) {
+    if (!this.head) {
+      throw new Error('Linked List is Empty');
+    }
+
+    let current = this.head;
+
+    while (current) {
+      if (current.next.value === value) {
+        let node = new Node(newValue);
+        node.next = current.next;
+        current.next = node;
+        return
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
+  insertAfter(value, newValue) {
+    if (!this.head) {
+      throw new Error('Linked List is Empty');
+    }
+
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) {
+        let node = new Node(newValue);
+        node.next = current.next;
+        current.next = node;
+        return
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
+
 
 }
 
