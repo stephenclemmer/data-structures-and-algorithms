@@ -85,3 +85,58 @@ class Queue {
   }
 
 }
+
+// Code Challenge 12
+
+Hayden Cleaver
+
+'use strict';
+
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.front = null;
+    this.back = null;
+  }
+
+  enqueue(value) {
+    let newNode = new Node(value);
+    if (this.front) {
+      this.back.next = newNode;
+    } else {
+      this.front = newNode;
+    }
+    this.back = newNode;
+  }
+
+  dequeue() {
+    if (this.front === null) {
+      return 'this queue is empty';
+    } else {
+      let temp = new Node();
+      temp.next = this.front;
+      this.front = this.front.next;
+      temp.next.next = null;
+      return temp.next.value;
+    }
+  }
+
+  peek() {
+    if (this.front === null) {
+      return 'this queue is empty';
+    } else {
+      return this.front.value;
+    }
+  }
+
+  isEmpty() {
+    return this.front === null;
+  }
+
+}
