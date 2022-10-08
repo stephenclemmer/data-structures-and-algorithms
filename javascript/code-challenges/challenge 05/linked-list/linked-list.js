@@ -44,16 +44,15 @@ class LinkedList {
 
   // TO STRING
   toString() {
-    console.log('you are in it');
     let current = this.head;
-    let string = "";
+    let string = '';
 
     while (current) {
-      console.log(current.value);
+      // console.log(current.value);
       string = string + `{ ${current.value} } -> `;
       current = current.next;
     }
-    string = string + "NULL";
+    string = string + 'NULL';
     return string;
   }
 
