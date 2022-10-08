@@ -8,6 +8,10 @@
 
 [linked-list data structures challenge](./code-challenges/linked-list/linked-list.md)
 
+[linked-list-insertions data structures challenge](./code-challenges/linked-list-insertions/linked-list-insertions.md)
+
+[code challenge 11]()
+
 
 # Collaborators:
 Challenge 8, question 1: I referenced Luis Rosales' code to solve this question.

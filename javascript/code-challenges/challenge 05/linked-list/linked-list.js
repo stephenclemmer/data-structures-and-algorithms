@@ -14,7 +14,7 @@ class LinkedList {
     this.length = 0;
   }
 
-  // INSERT
+  // INSERT - add node to the front of the linked list
   insert(value) {
     this.length++;
 
@@ -70,4 +70,4 @@ class LinkedList {
 // // console.log('this is it', booyah);
 // console.log(list.toString());
 
-module.exports = { Node, LinkedList };
+module.exports = LinkedList;
