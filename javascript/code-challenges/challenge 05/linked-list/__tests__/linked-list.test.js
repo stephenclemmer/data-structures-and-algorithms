@@ -1,27 +1,30 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../code-challenges/linked-list/linked-list');
+const {LinkedList} = require('../../../challenge 05/linked-list/linked-list');
 
 describe('Linked List', () => {
-  it('Can successfully instantiate an empty linked list', async () => {
+
+  it('Can successfully instantiate an empty linked list', () => {
     let list = new LinkedList();
-    expect(list).toBeTruthy();
+    expect(list).toBeInstanceOf(LinkedList);
   });
 
   it('Can properly insert into the linked list', () => {
 
-    let list = list.insert(9);
-    list = list.insert(12);
-    list = list.insert(42);
+    let list = new LinkedList();
+    list.insert(12);
+    list.insert(42);
     // not properly formatted expect
-    expect(list).toBe(42, 12, 9);
+    expect(list.head.value).toBe(42);
+    expect(list.head.next.value).toBe(12);
   });
 
   it('The head property will properly point to the first node in the linked list', () => {
-    this.head = head
-
-    expect(true).toBeTruthy();
+    let list = new LinkedList();
+    list.insert(42);
+    // not properly formatted expect
+    expect(list.head.value).toBe(42);
   });
 
   it('Can properly insert multiple nodes into the linked list', () => {
