@@ -8,7 +8,7 @@
 
 [linked-list data structures challenge](./code-challenges/linked-list/linked-list.md)
 
-[linked-list-insertions data structures challenge](./code-challenges/linked-list-insertions/linked-list-insertions.md)
+[06: linked-list-insertions](./code-challenges/06-linked-list-insertions/linked-list-insertions.md)
 
 
 # Collaborators:
