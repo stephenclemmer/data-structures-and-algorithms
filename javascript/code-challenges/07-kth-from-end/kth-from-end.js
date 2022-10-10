@@ -1,11 +1,10 @@
-'use strict'
-
 'use strict';
 
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+    this.length = 0;
   }
 }
 
@@ -16,6 +15,19 @@ class LinkedList {
     this.length = 0;
   }
 
+  // INSERT
+  insert(value) {
+    let node = new Node(value);
+    if (this.head) {
+      node.next = this.head;
+      this.head = node;
+      this.length++;
+      return node;
+    }
+    this.head = this.tail = node;
+    this.length++;
+    return node;
+  }
 
   // INCLUDES
   includes(value) {
@@ -34,35 +46,19 @@ class LinkedList {
   // TO STRING
   toString() {
     let current = this.head;
-    let string = "";
+    let string = '';
 
     while (current) {
-      console.log(current.value);
       string = string + `{ ${current.value} } -> `;
       current = current.next;
     }
-    string = string + "NULL";
+    string = string + 'NULL';
     return string;
-  }
-
-  // INSERT a node at the front of the linked list
-  insert(value) {
-    this.length++;
-
-    let node = new Node(value);
-    if (this.head) {
-      node.next = this.head;
-      this.head = node;
-      return node;
-    }
-    this.head = this.tail = node;
-    return node;
   }
 
   // APPEND: adds a node with a given value to the end of the linked list.
 
   append(value) {
-    this.length++;
 
     let node = new Node(value);
     let current = this.head;
@@ -70,13 +66,15 @@ class LinkedList {
     while (current.next !== null) {
       current = current.next;
     }
-
     current.next = node;
+    this.length++;
   }
 
-  insertBefore(value, newValue) {
-    this.length++;
 
+  // INSERT BEFORE arguments: value, new value
+  // adds a new node with the given new value immediately before the first node that has the value specified
+
+  insertBefore(value, newValue) {
     if (!this.head) {
       throw new Error('Linked List is Empty');
     }
@@ -88,7 +86,8 @@ class LinkedList {
         let node = new Node(newValue);
         node.next = current.next;
         current.next = node;
-        return
+        this.length++;
+        return;
       } else {
         current = current.next;
       }
@@ -96,8 +95,7 @@ class LinkedList {
   }
 
   insertAfter(value, newValue) {
-    this.length++;
-    
+
     if (!this.head) {
       throw new Error('Linked List is Empty');
     }
@@ -109,6 +107,7 @@ class LinkedList {
         let node = new Node(newValue);
         node.next = current.next;
         current.next = node;
+        this.length++;
         return;
       } else {
         current = current.next;
@@ -117,43 +116,22 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    // Find the length of the linked list
-    // subtract k from the number of nodes in the linked list
-    // travel down the linked list the remainder of times by setting a for loop for that number of times.
-    // create a node
-    // set the node as the new node at that location
+    // if (k > this.length) {
+    //   throw 'Linked list is shorter than the value specified';
+    // }
+    // else if (k < 1) {
+    //   throw 'Value specified cannot be less than one';
+    // } else {
 
-    if (!this.head) {
-      throw new Error('Linked List is Empty');
-    } else if (k > this.length) {
-      throw new Error('Linked List is Longer than Value');
+    let nodeIndex = (this.length - k);
+    let current = this.head;
+    for (let i = 0; i < nodeIndex; i++) {
+      current = current.next;
     }
-
-    let counter = k;
-
-
-
-    let (i = (this.length - k); i (current) {
-      if
-    }
+    return current.value;
 
   }
 
-
-
-
 }
-
-// let list = new LinkedList();
-// // console.log(list);
-// list.insert(9);
-// // console.log(list);
-// list.insert(14);
-// // console.log(list);
-// list.insert(43);
-// // console.log(list);
-// list.includes(41);
-// // console.log('this is it', booyah);
-// console.log(list.toString());
 
 module.exports = { Node, LinkedList };

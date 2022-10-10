@@ -5,8 +5,6 @@ const {LinkedList} = require('../linked-list-insertions');
 
 describe('Linked List Insertions', () => {
 
-
-
   it('Can successfully add a node to the end of the linked list', () => {
     let list = new LinkedList();
     list.insert(9);
