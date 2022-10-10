@@ -58,7 +58,7 @@ class BinaryTree {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
       arr.push(node.value);
-    }
+    };
     traverse(this.root);
     return arr;
   }
@@ -66,7 +66,7 @@ class BinaryTree {
   treeMax() {
 
     if (!this.root) {
-      throw Error('this tree is empty');
+      throw new Error('this tree is empty');
     }
 
     let temp = new Node(this.root.value);
@@ -89,59 +89,5 @@ class BinaryTree {
     return temp.value;
   }
 }
-// class BinarySearchTree {
-//   constructor() {
-//     this.root = null;
-//   }
-
-//   add(value) {
-//     let newNode = new Node(value);
-//     if (this.root === null) {
-//       this.root = newNode;
-//       return this;
-//     }
-//     let current = this.root;
-//     while (current) {
-//       if (value === current.value) return undefined;
-//       if (value < current.value) {
-//         if (current.left === null) {
-//           current.left = newNode;
-//           return this;
-//         }
-//         current = current.left;
-//       } else {
-//         if (current.right === null) {
-//           current.right = newNode;
-//           return this;
-//         }
-//         current = current.right;
-//       }
-//     }
-//   }
-
-//   contains(value) {
-//     if (!this.root) {
-//       return 'this tree is empty';
-//     }
-
-//     let current = this.root;
-//     let found = false;
-//     while (current && !found) {
-//       if (value < current.value) {
-//         current = current.left;
-//       } else if (value > current.value) {
-//         current = current.right;
-//       } else {
-//         found = current;
-//       }
-
-//     }
-
-//     if (!found) return 'false';
-//     if (found) return 'true';
-
-
-//   }
-// }
 
 module.exports = {Node, BinaryTree};

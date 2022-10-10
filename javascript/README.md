@@ -12,6 +12,8 @@
 
 [15: binary tree and binary search tree implementations](./code-challenges/15-Binary-Tree-and-BST-Implementation/binary-tree-and-bst-implementation.md)
 
+[16: tree max](./code-challenges/16-tree-max/tree-max.md)
+
 
 [code challenge 11]()
 

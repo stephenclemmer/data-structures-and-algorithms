@@ -40,9 +40,7 @@ describe('Tree Max', () => {
 
     let tree = new BinaryTree();
 
-    let answer = tree.treeMax;
-
-    expect(answer).toBe();
+    expect(() => tree.treeMax()).toThrow (new Error ('this tree is empty'));
   });
 
 });
