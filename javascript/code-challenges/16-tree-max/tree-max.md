@@ -30,6 +30,9 @@ All of the methods that already exist in this class are available to use.
 7. Continue recursing through the tree.
 8. Return the temp value.
 
+**Code**
+[Code for treeMax](tree-max.js)
+
 **Efficiency:**
 Time: O(n)
 Space: O(1)
