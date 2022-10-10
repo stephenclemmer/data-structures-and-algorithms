@@ -1,28 +1,33 @@
 # Implementatin: Trees
 
-## Challenge
-
-##### Write the following methods for the Linked List class:
-
-1. append
-2. insertBefore
-3. insertAfter
-
 ## Node
 
 **Challenge:**
 Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 
-**Approach**
-<!-- I created a new node with the new value. Since only the end of the list will point to null, I traveresed the linked list until I came to a current.next that was equal to null by creating a while loop that would continue to move current to current.next as long as current.next did not equal null. This would cause the while loop to break at the point while current equaled the last node in the linked list. I then pointed current.next to the new node, which will make the new node the last value in the linked list. I then returned to break out of the loop. -->
+**Approach:**
+
+1. Created a Node class with a constructor that takes a value.
+2. set the value to the value specified
+3. set the left and right pointers to null.
 
 **Efficiency:**
-<!-- This has a time of O(n), because the whole list will need to be traversed, and the length of time that will take is dependent on the length of the list. It has a space of O(1) because other than the new node, no additional space will be needed. -->
+This has a time of O(1), because it creates a single node. It has a space of O(1) because it creates a single node.
 
 ## Binary Tree
 
 **Challenge:**
 Create a Binary Tree class
+
+**Approach:**
+
+1. Created a Binary Tree class with a constructor that takes no value, because the tree will be empty.
+2. Set the value of the root to null to create an empty tree.
+
+**Efficiency:**
+This has a time of O(1), because it creates a single empty tree. It has a space of O(1) because the tree is empty.
+
+## Binary Tree Methods
 
 **Challenge:**
 Define a method for each of the depth first traversals:
@@ -34,20 +39,35 @@ Define a method for each of the depth first traversals:
 
 **pre order:**
 
+1. created an empty array to push the values onto as the tree is traversed.
+2. pushed the current node's value into the array, which in this case is the root's value.
+3. If there is a node to the left, then the node to the left will be traversed. On each traversal their value will be pushed into the array. This will continue to the laft until there are no more left values at which point the right values will be traversed and pushed into the array.
+4. called the initial traverse function with a value of the root.
+5. returned the array with all values that have been pushed into it.
+
 **in order:**
+
+1. created an empty array to push the values onto as the tree is traversed.
+2. The tree is traveresed to its leftmost leaf, at which point the value is pushed in.
+3. Once the left nodes have been traversed, the right nodes will be tarversed and pushed into the array.
+4. This continues until the tree is traversed to the root at which point the root will be pushed into the array.
+5. Then, the right side of the tree will be traversed from left to right.
+6. I called the initial traverse function with a value of the root.
+7. I returned the array with all values that have been pushed into it.
 
 **post order:**
 
-<!-- I first checked to see if the list was empty. If it was empty, I alerted the user that the list was empty.
+1. created an empty array to push the values onto as the tree is traversed.
+2. The tree is traveresed to its leftmost leaf, at which point the value is pushed in.
+3. Then, the tree moves to its next closest righthand child, if there is one, and that is pushed into the array.
+4. This continues until the tree's lefthand side is traversed, at which point the righthadn side is traversed, starting at its leftmost leaef, and moving up toward the root from left to right.
+5. Finally, the root is added to the array.
+6. I called the initial traverse function with a value of the root.
+7. I returned the array with all values that have been pushed into it.
 
-If the list is not empty, then I prepared to traverse the list by setting the the current value to the head.
-
-I checked the head in case its value was the value to be inserted before. If it were, then I created a new node with the new value which was inputted as an argument,pointed the new node to the current value, and set the head to the new node.
-
-If the head's value was not the one that was entered as an argument, looked at the current.next's value until I found one that matched the value we were looking for. At this time I created a new node and assigned it the new value that was given as an argument, pointed the new node to the node after the current node (current.next), and then pointed the current node toward the new node. I then returned to break out of the loop. -->
 
 **Efficiency:**
-<!-- This has a time of O(n), because the whole list will need to be traversed, and the length of time that will take is dependent on the length of the list. It has a space of O(1) because other than the new node, no additional space will be needed. -->
+This has a time of O(n), because the whole tree will need to be traversed, and the length of time that will take is dependent on the length of the tree. It has a space of O(1) because no additional space will be needed.
 
 ## Binary Search Tree
 
@@ -55,28 +75,55 @@ If the head's value was not the one that was entered as an argument, looked at t
 **Create a Binary Search Tree class**
 This class should be a sub-class (or your languages equivalent) of the Binary Tree Class, with the following additional methods:
 
+**Approach:**
+
+1. Created a Binary Tree class with a constructor that takes no value, because the tree will be empty.
+2. Set the value of the root to null to create an empty tree.
+
+**Efficiency:**
+This has a time of O(1), because it creates a single empty tree. It has a space of O(1) because the tree is empty.
+
+## Binary Search Tree Methods
+
 **Add**
 Arguments: value
 Return: nothing
 Adds a new node with that value in the correct location in the binary search tree.
 
+**Approach**
+
+1. Create a new node with the value equal to the value specified.
+2. Checks to see if the tree is empty, at which point it makes the new node the root.
+3. If the tree is not empty, then the tree is traversed, if the value specified as an argument is equal to the current value, then the tree already contains the value and it returns undefined.
+4. If the value specified as an argument is less than the current value, and the current.left is null, then the new node becomes current.left, and the tree is returned. Otherwise, the tree continues to be traversed to the left.
+5. If the value specified as an argument is not less than the current value, and the current.right is null, then the new node becomes current.right, and the tree is returned. Otherwise, the tree continues to be traversed to the right.
+6. Steps four and five are repeated until the new node is added to the tree, or until undefined is returned, indicating that the value is already present in the tree.
+
+**Efficiency:**
+This has a time of O(LogN), because the tree will get cut in half at each step as it is being traversed, and the whole tree will be n large. It has a space of O(1) because no additional space will be needed.
+
 **Contains**
 Argument: value
 Returns: boolean indicating whether or not the value is in the tree at least once.
 
-**Approach**
-<!-- I first checked to see if the list was empty. If it was empty, I alerted the user that the list was empty.
+**Approach:**
 
-If the list is not empty, then I prepared to traverse the list by setting the the current value to the head.
+1. If there is no root, then a message is rteturned indicationg that the tree is empty.
+2. If the tree is not empty, then the current node is set to the root.
+3. Avaiable called found is defined and set to false as a default, indicating that the value is not present.
+4. while there is a current node as the tree is traversed, and while the value has not been found:
+5. If the value entered as an argument is less than the current value, then the current value will move left,
+6. If the value entered as an argument is greater than the the current value, then the current value will move right.
+7. If the current can neither move left or right, then the current is equal to the value entered as an argument, at which point found is set equal to the current, which breaks out of the loop.
+8. If found is still false, then it returns false. If found is true then it returns true.
 
-As I traveresed the list, if the current value was equal to the value that had been input as an argument, then I created a new node and assigned it the new value that had been entered as an argument. Then, I pointed the new node to the current node's next node. Then, I pointed the current node's next value to the new node. I then returned to break out of the loop. -->
 
 **Efficiency:**
-<!-- This has a time of O(n), because the whole list will need to be traversed, and the length of time that will take is dependent on the length of the list. It has a space of O(1) because other than the new node, no additional space will be needed. -->
+This has a time of O(LogN), because the tree will get cut in half at each step as it is being traversed, and the whole tree will be n large. It has a space of O(1) because no additional space will be needed.
 
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+
 **new Node(value)**
 Creates a new node with the value specified.
 

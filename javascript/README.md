@@ -10,6 +10,8 @@
 
 [06: linked-list-insertions](./code-challenges/06-linked-list-insertions/linked-list-insertions.md)
 
+[15: binary tree and binary search tree implementations](./code-challenges/15-Binary-Tree-and-BST-Implementation/binary-tree-and-bst-implementation.md)
+
 
 # Collaborators:
 Challenge 8, question 1: I referenced Luis Rosales' code to solve this question.
