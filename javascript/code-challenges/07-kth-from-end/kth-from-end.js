@@ -116,22 +116,22 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    // if (k > this.length) {
-    //   throw 'Linked list is shorter than the value specified';
-    // }
-    // else if (k < 1) {
-    //   throw 'Value specified cannot be less than one';
-    // } else {
-
-    let nodeIndex = (this.length - k);
-    let current = this.head;
-    for (let i = 0; i < nodeIndex; i++) {
-      current = current.next;
+    if (k > this.length) {
+      throw 'Linked list is shorter than the value specified';
     }
-    return current.value;
+    else if (k < 1) {
+      throw 'Value specified cannot be less than one';
+    } else {
+
+      let nodeIndex = (this.length - k);
+      let current = this.head;
+      for (let i = 0; i < nodeIndex; i++) {
+        current = current.next;
+      }
+      return current.value;
+
+    }
 
   }
-
 }
-
 module.exports = { Node, LinkedList };

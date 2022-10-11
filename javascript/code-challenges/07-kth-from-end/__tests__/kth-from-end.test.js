@@ -4,7 +4,7 @@ const { Node, LinkedList } = require('../kth-from-end');
 
 describe('kth from end', () => {
 
-  it('throws and error when k is greater than the length of the linked list', () => {
+  it('throws an error when k is greater than the length of the linked list', () => {
 
     let list = new LinkedList();
     list.insert(2);
@@ -14,7 +14,7 @@ describe('kth from end', () => {
     let fromEndOne = list.kthFromEnd(4);
 
 
-    // expect(list.kthFromEnd(5)).toThrow('Linked list is shorter than the value specified');
+    expect(() => list.kthFromEnd(5)).toThrow();
     expect(fromEndOne).toEqual(12);
   });
 
@@ -31,7 +31,7 @@ describe('kth from end', () => {
     expect(fromEndOne).toEqual(12);
   });
 
-  it('throws and error when k not a positive integer', () => {
+  it('throws an error when k not a positive integer', () => {
 
     let list = new LinkedList();
     list.insert(2);
@@ -39,7 +39,7 @@ describe('kth from end', () => {
     list.insert(10);
     list.insert(12);
 
-    // expect(list.kthFromEnd(0)).toThrow('Value specified cannot be less than one');
+    expect(() => list.kthFromEnd(0)).toThrow('Value specified cannot be less than one');
   });
 
   it('Works when the linked list is of a size 1', () => {
