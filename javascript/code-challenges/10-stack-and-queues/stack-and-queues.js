@@ -42,7 +42,7 @@ class Stack {
     return this.top === null;
   }
 
-};
+}
 
 class Queue {
   constructor() {
