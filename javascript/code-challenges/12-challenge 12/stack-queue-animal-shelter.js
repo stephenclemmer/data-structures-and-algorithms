@@ -1,5 +1,6 @@
 'use strict';
 
+// Node Class
 class Node {
   constructor(value) {
     this.value = value;
@@ -7,6 +8,7 @@ class Node {
   }
 }
 
+// Queue Class
 class Queue {
   constructor() {
     this.front = null;
@@ -49,22 +51,22 @@ class Queue {
 
 }
 
+// Animal Shelter Class
+
 
 class AnimalShelter {
-  constructor(){
+  constructor() {
     this.primary = new Queue();
     this.secondary = new Queue();
   }
 
   enqueue(animal) {
 
-    if (animal !== 'Cat' || animal !== 'Dog'){
+    if (animal !== 'Cat' || animal !== 'Dog') {
       return null;
+
     } else {
-
-
       let newNode = new Node(animal);
-      // console.log(newNode);
 
       if (this.primary.front) {
         this.primary.back.next = newNode;
@@ -76,38 +78,64 @@ class AnimalShelter {
   }
 
 
-  dequeue(preference){
-    console.log('+++++++++++++', preference);
-    // console.log(this.secondary.front.value);
-    if (this.secondary.front.value === preference){
+  dequeue(preference) {
+    if (this.secondary.front && this.secondary.front.value === preference) {
+      let pet = this.secondary.front.value;
+      this.secondary.front = this.secondary.front.next;
 
-      console.log('==============', this.secondary.front.value);
-    } else {
-      // console.log(preference);
-      while(this.secondary.front.value !== preference){
-        // console.log(this.primary.dequeue());
-        this.secondary.enqueue(this.primary.dequeue());
-        this.primary.front = this.primary.front.next;
+      if (this.secondary.front === null) {
+        this.secondary.back = null;
       }
-      return this.secondary.front;
+      return pet;
+
+    } else {
+      if (this.primary.front === null) {
+        return 'no animals match the preference';
+
+      } else {
+        while (this.primary.front.next && this.primary.front.value !== preference) {
+          this.secondary.enqueue(this.primary.dequeue());
+        }
+        let pet = this.primary.front.value;
+        this.primary.front = this.primary.front.next;
+        if (this.primary.front === null) {
+          this.primary.back = null;
+          return pet;
+        }
+        if (this.primary.front === null) {
+          return 'no animals match the preference';
+        }
+      }
     }
-    // console.log(this.secondary.front);
   }
 }
 
+
 // let animalShelter = new AnimalShelter();
+
+// console.log(animalShelter);
 
 // animalShelter.primary.enqueue('Cat');
 // animalShelter.primary.enqueue('Dog');
-// animalShelter.primary.enqueue('Dog');
 // animalShelter.primary.enqueue('Cat');
+// animalShelter.primary.enqueue('Cat');
+// animalShelter.primary.enqueue('Cat');
+// animalShelter.primary.enqueue('Dog');
 
 // animalShelter.secondary.enqueue('Dog');
 
-// console.log(animalShelter.secondary);
+// console.log('============', animalShelter.dequeue('Dog'));
+// console.log('+++++++++++++', animalShelter.primary);
+// console.log('_____________', animalShelter.secondary);
 
-// animalShelter.dequeue('Cat');
-// console.log(animalShelter.primary);
+// console.log('ROUND TWO');
+// console.log('============', animalShelter.dequeue('Dog'));
+// console.log('+++++++++++++', animalShelter.primary);
+// console.log('_____________', animalShelter.secondary);
+
+// console.log('============', animalShelter.dequeue('Dog'));
+// console.log('+++++++++++++', animalShelter.primary);
+// console.log('_____________', animalShelter.secondary);
 
 module.exports = (AnimalShelter, Node, Queue);
 
