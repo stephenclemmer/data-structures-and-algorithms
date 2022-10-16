@@ -79,6 +79,31 @@ class AnimalShelter {
 
 
   dequeue(preference) {
+
+    if (preference === 'noPreference' && this.secondary.front) {
+      let pet = this.secondary.front.value;
+      this.secondary.front = this.secondary.front.next;
+
+      if (this.secondary.front === null) {
+        this.secondary.back = null;
+      }
+      return pet;
+    }
+    if (preference === 'noPreference' && this.primary.front) {
+      let pet = this.primary.front.value;
+      this.primary.front = this.primary.front.next;
+      if (this.primary.front === null) {
+        this.primary.back = null;
+      }
+      return pet;
+    }
+
+    // If requested animal is not a cat, dog, or either.
+    if (preference !== 'Cat' && preference !== 'Dog' && preference !== 'noPreference') {
+      return 'Your options for pets are Dog, Cat, or noPreference';
+    }
+
+
     if (this.secondary.front && this.secondary.front.value === preference) {
       let pet = this.secondary.front.value;
       this.secondary.front = this.secondary.front.next;
@@ -90,7 +115,7 @@ class AnimalShelter {
 
     } else {
       if (this.primary.front === null) {
-        return 'no animals match the preference';
+        return 'no animals are in waiting for homes';
 
       } else {
         while (this.primary.front.next && this.primary.front.value !== preference) {
@@ -103,7 +128,7 @@ class AnimalShelter {
           return pet;
         }
         if (this.primary.front === null) {
-          return 'no animals match the preference';
+          return 'no animals are in waiting for homes';
         }
       }
     }
@@ -137,5 +162,5 @@ class AnimalShelter {
 // console.log('+++++++++++++', animalShelter.primary);
 // console.log('_____________', animalShelter.secondary);
 
-module.exports = (AnimalShelter, Node, Queue);
+module.exports = { AnimalShelter, Node, Queue };
 
