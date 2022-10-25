@@ -74,6 +74,7 @@ console.log(insertionSort(array));
 ___
 
 ## Implementation
+
 Provide a visual step through for each of the sample arrays based on the provided pseudo code
 Convert the pseudo-code into working code in your language
 
