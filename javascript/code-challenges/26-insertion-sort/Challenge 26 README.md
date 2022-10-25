@@ -2,7 +2,9 @@
 
 ## Sources
 [w3 resource](https://www.w3resource.com/javascript-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-4.php#:~:text=Insertion%20sort%20is%20a%20simple,%2C%20heapsort%2C%20or%20merge%20sort.)
+
 [geeks for geeks](https://www.geeksforgeeks.org/insertion-sort/)
+
 [Algorithm video](https://youtu.be/OGzPmgsI-pQ)
 
 
@@ -11,13 +13,14 @@
 1. Set a marker for the sorted section after the first element
 2. Repeat the following until the unsorted section is empty:
   1. Select the first unsorted element
-  2. Swap other elements to the right to create the coprrect position and shift the unsorted element
+  2. While elements to the left of the unsorted element are higher in value than the unsorted element, swap other elements to the right to create the correct position and shift the unsorted element left
   3. advance the marker to the right one element.
 
 ## Pseudocode
 
 InsertionSort(int[] arr)
 
+```
   FOR i = 1 to arr.length
 
     int j <-- i - 1
@@ -28,6 +31,7 @@ InsertionSort(int[] arr)
       j <-- j - 1
 
     arr[j + 1] <-- temp
+```
 
 ## Sample Arrays
 
@@ -37,11 +41,86 @@ InsertionSort(int[] arr)
 ## Implementation
 Provide a visual step through for each of the sample arrays based on the provided pseudo code
 Convert the pseudo-code into working code in your language
+
 Present a complete set of working tests
+
+temp = the marker that divides the sorted(left) and unsorted (right) sides of the array.
+___
+temp = array\[1]  (value: 4)
+
+While loop: 0 >= 0 && 8 > 4{
+
+![Step One](./assets/1.png)
+___
+
+> The POSITION with the value of four becomes the POSITION with a value of 8;
+
+> j decrements by one (-1); }
+
+> 0 >= 0 && 4 > 8 --> FALSE, while loop breaks;
+
+> The temp marker increments by one  to arr\[2] (value: 23)
+
+![Step Two](./assets/2.png)
+___
+
+> temp = array\[2](23)
+
+> While loop: 1 >= 0 && 8 > 23{ --> FALSE, while loop breaks;
+
+> The temp marker increments by one to arr\[3] (value: 42)
+
+![Step 3](./assets/3.png)
+___
+temp = array\[3](42)
+
+> While loop: 2 >= 0 && 23 > 42 { --> FALSE, while loop breaks;
+
+> The temp marker increments by one to arr\[4] (value: 16)
+![Step 4](./assets/4.png)
+___
+temp = array\[4]
+
+> While loop: 3 >= 0 && 42 > 16 { 
+
+> The POSITION with the value of 16 becomes the POSITION with a value of 42;
+
+> j decrements by one (2); }
+
+![Step Five](./assets/5.png)
+___
+
+> While loop: 2 >= 0 && 23 > 16 { 
+
+> The POSITION with the value of 16 becomes the POSITION with a value of 42;
+
+> j decrements by one (2); }
+
+___
+temp = array\[4]
+
+![Step Six](./assets/6.png)
+___
+temp = array\[5]
+
+![Step Seven](./assets/7.png)
+___
+temp = array\[5]
+
+![Step Eight](./assets/8.png)
+___
+temp = array\[5]
+
+> The temp marker increments by one  to arr\[2] (value: 23)
+![Step Nine](./assets/9.png)
+___
+For loop breaks. Array is sorted.
+
+![Step Ten](./assets/10.png)
 
 ## Code
 
-
+```javascript
 const insertionSort = (nums) => {
   for (let i = 1; i < nums.length; i++) {
     let j = i - 1
@@ -58,6 +137,7 @@ const insertionSort = (nums) => {
 let array = [8,4,23,42,16,15];
 
 console.log(insertionSort(array));
+```
 ___
 
 temp = the marker at the index of the first number in the unsorted portion of the array.
