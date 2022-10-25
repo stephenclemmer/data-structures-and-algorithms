@@ -46,9 +46,11 @@ Present a complete set of working tests
 
 temp = the marker that divides the sorted(left) and unsorted (right) sides of the array.
 ___
-temp = array\[1]  (value: 4)
+> temp = array\[1]  (value: 4)
 
-While loop: 0 >= 0 && 8 > 4{
+> j is set to 0
+
+> While loop: 0 >= 0 && 8 > 4{
 
 ![Step One](./assets/1.png)
 ___
@@ -66,22 +68,28 @@ ___
 
 > temp = array\[2](23)
 
+> j is reset to 1
+
 > While loop: 1 >= 0 && 8 > 23{ --> FALSE, while loop breaks;
 
 > The temp marker increments by one to arr\[3] (value: 42)
 
 ![Step 3](./assets/3.png)
 ___
-temp = array\[3](42)
+> temp = array\[3](42)
+
+> > j is reset to 2
 
 > While loop: 2 >= 0 && 23 > 42 { --> FALSE, while loop breaks;
 
 > The temp marker increments by one to arr\[4] (value: 16)
 ![Step 4](./assets/4.png)
 ___
-temp = array\[4]
+> temp = array\[4]
 
-> While loop: 3 >= 0 && 42 > 16 { 
+> j is reset to 3
+
+> While loop: 3 >= 0 && 42 > 16 {
 
 > The POSITION with the value of 16 becomes the POSITION with a value of 42;
 
@@ -90,28 +98,54 @@ temp = array\[4]
 ![Step Five](./assets/5.png)
 ___
 
-> While loop: 2 >= 0 && 23 > 16 { 
+> While loop: 2 >= 0 && 23 > 16 {
 
-> The POSITION with the value of 16 becomes the POSITION with a value of 42;
+> The POSITION with the value of 16 becomes the POSITION with a value of 23;
 
-> j decrements by one (2); }
+> j decrements by one (1); }
 
 ___
 temp = array\[4]
 
+> While loop: 1 >= 0 && 8 > 16 { --> FALSE, while loop breaks;
+
+> The temp marker increments by one to arr\[5] (value: 15)
+
 ![Step Six](./assets/6.png)
 ___
-temp = array\[5]
+> temp = array\[5]
+
+> j is reset to 4
+
+> While loop: 4 >= 0 && 42 > 15 {
+
+> The POSITION with the value of 15 becomes the POSITION with a value of 42;
+
+> j decrements by one (3); }
 
 ![Step Seven](./assets/7.png)
 ___
-temp = array\[5]
+> temp = array\[5]
+
+> While loop: 3 >= 0 && 23 > 15 {
+
+> The POSITION with the value of 15 becomes the POSITION with a value of 23;
+
+> j decrements by one (2); }
 
 ![Step Eight](./assets/8.png)
 ___
-temp = array\[5]
+> temp = array\[5]
 
-> The temp marker increments by one  to arr\[2] (value: 23)
+> While loop: 2 >= 0 && 16 > 15 {
+
+> The POSITION with the value of 15 becomes the POSITION with a value of 16;
+
+> j decrements by one (2); }
+
+> While loop: 1 >= 0 && 15 > 16 { --> FALSE, while loop breaks;
+
+> The temp marker increments by one  to arr\[6] (value: Does not exist)
 ![Step Nine](./assets/9.png)
 ___
 For loop breaks. Array is sorted.
