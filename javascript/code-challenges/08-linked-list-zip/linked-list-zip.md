@@ -16,7 +16,7 @@ Define a 'current' pointer (C1)
 
 **helper  function**
 make a helper function named zipNode that takes in a linked list and a pointer to handle:
-
+git checkout -b 
 1. using 'current' to point to the head node from a list
 2. reassigning the head to the mext node in the list
 3. pointing current to null, so the node will be removed from the list
