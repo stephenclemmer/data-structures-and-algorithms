@@ -1,21 +1,23 @@
-# Code Challenge
+# sort-and-filter-movies
 
-Implement several array sorting comparators and an array filter.
-
-## Specifications
-
-- Read all of these instructions carefully.
-- Name things exactly as described.
-- Do all your work in a your `data-structures-and-algorithms` public repository.
-- Create a new branch in your repo named as noted below.
-- Follow the language-specific instructions for the challenge type listed below.
-- Update the "Table of Contents" - in the README at the root of the repository - with a link to this challenge's README file.
-
-### Challenge Setup & Execution
+## Challenge Setup & Execution
 
 **Branch Name:** `sort-and-filter-movies`
 
 **Challenge Type:** Code Challenge / Algorithm
+
+## Approach
+
+After researching this problem, I realized that I could sort this dataset by using an insert sort method. I decided to approach the sortYear function first because it seemed to be the least complex, and most analagous to the insert sort algorithm of which I am famliar. I took my insert sort code and refactored it, which gave me the results I was looking for very quickly.
+
+Next, I decided to approach the sortTitle function, because aside from solving the problem of neededing to ignore the article 'The' (and a space), to get the list alphabetized I figured that with a slight refactor of the sortYear function I could get it alphebetized. I was able to do so fairly quickly, but the titles that began with 'The' were still out of place. Since only two indexes would be compared with reach pass if the for loop, for each of the indexes (arr\[j] or arr\[j+1], I used the . includes method to pinpoint the word 'The' in each title, and then used the .replace method to replace 'The ' with an empty string. I initially did this within the while loop, but found that it created an off by one error while testing so I moved the logic out into the for loop. It should be noted that for the tests to pass, I removed the articles from the expected results of the test.
+
+Finally I approached solving the inGenre method since it needed only one aditional step added to the sortTitle function. My approach was to create an additional genre-array, and then first sort all of the movies of the genre entered as an argument into the genre-array. Then, I sorted the genre-array in the same way that I sorted using sortTitle.
+
+
+
+
+
 
 ## Feature Tasks
 
