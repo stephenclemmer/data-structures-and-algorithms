@@ -40,6 +40,7 @@ In this method, the hash is independent of the array size and it is then reduced
 
 **Hash maps do this to read value:**
 
+
 - accept a key
 - calculate the hash of the key
 - use modulus to convert the hash into an array index
