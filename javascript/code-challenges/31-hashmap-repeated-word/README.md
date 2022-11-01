@@ -1,5 +1,10 @@
 # Code Challenge 31
 
+## resources
+
+https://www.geeksforgeeks.org/find-first-repeated-word-string/
+
+
 ## Problem Domain
 
 Write a function called repeated word that finds the first word to occur more than once in a string
