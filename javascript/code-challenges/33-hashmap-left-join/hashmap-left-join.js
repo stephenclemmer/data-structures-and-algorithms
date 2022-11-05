@@ -40,3 +40,4 @@ function leftJoin(hashmap1, hashmap2){
 console.log(leftJoin(hashmap1, hashmap2));
 
 
+module.exports = leftJoin;
