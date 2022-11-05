@@ -18,11 +18,11 @@ class Graph {
     this._adjacencyList = new Map();
   }
 
-  addVertex(vertex) {
-    this._adjacencyList.set(vertex, []);
+  addNode(value) {
+    this._adjacencyList.set(value, []);
   }
 
-  addDirectedEdge(startVertex, endVertex, weight = 0) {
+  addEdge(startVertex, endVertex, weight = 0) {
     if (!this._adjacencyList.has(startVertex) || !this._adjacencyList.has(endVertex)) {
       throw new Error('__ERROR__ Invalid Vertices');
     }
@@ -31,12 +31,20 @@ class Graph {
     adjacencies.push(new Edge(endVertex, weight));
   }
 
+  getNodes() {
+    return this._adjacencyList;
+  }
+
   getNeighbors(vertex) {
     if (!this._adjacencyList.has(vertex)) {
       throw new Error('__ERROR__ Invalid Vertex');
     }
 
     return [...this._adjacencyList.get(vertex)];
+  }
+
+  size() {
+    return this._adjacencyList.size;
   }
 
   breadthFirst(startNode) {
@@ -61,11 +69,25 @@ class Graph {
         queue.push(neighborNode);
       }
     }
+  }
 
-    depthFirst(startNode) {
-      const visitedNodes = new Set();
-
-    return visitedNodes;
+  depthFirst(startNode) {
+    const visitedNodes = new Set();
+    const _traverseNeighbors = (vertex) => {
+      if (!vertex) {
+        return;
+      }
+      visitedNodes.add(vertex);
+      const neighbors = this.getNeighbors(vertex);
+      for (let neighbor of neighbors) {
+        const neighborNode = neighbor.vertex;
+        if (visitedNodes.has(neighborNode)) {
+          continue;
+        } else {
+          _traverseNeighbors(neighborNode);
+        }
+      }
+    };
   }
 }
 
