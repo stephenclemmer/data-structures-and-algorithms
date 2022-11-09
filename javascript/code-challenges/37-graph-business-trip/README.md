@@ -1,4 +1,4 @@
-# Graph Breadth First
+# Graph Business Trip
 
 ## Challenge Details
 

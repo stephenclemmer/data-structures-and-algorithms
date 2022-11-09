@@ -1,9 +1,11 @@
 'use strict';
-const { describe, it, expect } = require('eslint/lib/rule-tester/rule-tester');
-const { Graph, Vertex } = require('../../36-graph-breadth-first/graph-breadth-first.js');
+const { Graph, Vertex } = require('../../37-graph-business-trip/graph-business-trip.js');
+const { describe, it } = require('eslint/lib/rule-tester/rule-tester');
+const {expect} = require('@jest/globals');
 
-describe('Graphs', () => {
-  it('should traverse breadth first', () => {
+
+describe('Graph-business-trip', () => {
+  it('should return true if there is a direct flight between the two cities', () => {
     const graph = new Graph();
     const pandora = new Vertex('Pandora');
     const arendelle = new Vertex('Arendelle');
@@ -27,7 +29,7 @@ describe('Graphs', () => {
     graph.addEdge(monstroplolis, naboo);
     graph.addEdge(naboo, narnia);
 
-    expect(graph.breadthFirst(pandora)).toBe(['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Naboo', 'Narnia']);
+    expect(graph.businessTrip([pandora, arendelle])).toBe(true);
   });
 });
 
