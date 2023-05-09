@@ -8,14 +8,19 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
+
 const addOne = (arr) => {
+  let holding = [];
 
-  let newArr = [];
-  arr.forEach((element) => {newArr.push(element +1);});
-  return newArr;
+  arr.forEach(myFunction);
+
+  function myFunction(x){
+    holding.push(x + 1);
+  }
+
+    return holding;
+
 };
-
-console.log(addOne([1,2,3]));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -26,13 +31,16 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  let newArr = [];
-  arr.forEach((element) => {newArr.push(element + '!');});
-  return newArr;
-  // Solution code here...
-};
 
-console.log(addExclamation(['A','B','C']));
+  let holding = [];
+
+  arr.forEach(myFunction);
+
+  function myFunction(x){
+    holding.push(x+'!');
+  }
+  return holding;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -43,13 +51,17 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
-  let newArr = [];
-  arr.forEach((element) => {newArr.push(element.toUpperCase());});
-  return newArr;
+  let holding = [];
+
+  arr.forEach(myFunction)
+
+  function myFunction(x){
+    holding.push(x.toUpperCase());
+  }
+
+  return holding;
 };
 
-console.log(allUpperCase(['a','b','c']));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -59,31 +71,18 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
+let holding = [];
 
 const greeting = (word) => {
-  let newArr = [];
-  // Solution code here...
-  newArr.push(word);
-  let modifiedArr = (allUpperCase(addExclamation(newArr)));
-
-  // let newString = modifiedArr.toString();
-  // return newString;
-  return modifiedArr[0];
+  return word.toUpperCase() + '!';
 };
-
-console.log(greeting('uppercasestring'));
 
 const speaker = (words, callback) => {
-  let newArr = [];
-  // Solution code here...
-  words.forEach((element) => {
-    let modifiedEle = greeting(element);
-    newArr.push(modifiedEle);
-  })
-  return newArr;
+  words.forEach(x => {
+    holding.push(callback(x))
+  });
+  return holding;
 };
-
-console.log(speaker(['one', 'two', 'three'], greeting));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -102,25 +101,23 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
-  let valueAdded = arr.push(value);
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
 
-  for (let i = 0; i < times; i++) {
+  for(let i = 0; i < times; i++){
     callback(arr, num);
   }
 
   return arr;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -134,21 +131,21 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-const createList = (availableItems) => {
-  // Solution code here...
-  let list = [];
 
-  availableItems.forEach((item) => {
-    console.log(item.available);
-    if (item.available === true){
-      list.push(item.name);
-    }
+
+
+const createList = (availableItems) => {
+  holding = [];
+  availableItems.forEach(x => {
+    if(x.available === true){
+      holding.push(x.name)
+    };
   });
 
-  return list;
+  return holding;
 
-};
 
+  }
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
@@ -165,7 +162,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  holding = []
+  arr.forEach(x => {
+    if (x % 15 === 0){
+      holding.push('Fizz Buzz');
+    } else if (x % 5 === 0){
+      holding.push('Buzz');
+    } else if (x % 3 === 0) {
+      holding.push('Fizz');
+    } else {
+      holding.push(x);
+    }
+  })
+  return holding;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -219,7 +228,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
