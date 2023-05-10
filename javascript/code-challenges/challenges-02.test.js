@@ -9,11 +9,9 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Solution code here...
-  console.log(arr);
   let newArr = [];
 
-  arr.forEach((element) => {
+  arr.forEach(element => {
     newArr.push(Math.pow(element, 3));
   });
 
@@ -27,12 +25,20 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
-  let newArr = arr.map( function(n) {
+  let newArr = arr.map(n => {
     return n + 1;
   });
   return newArr;
 };
+
+// Code from 301:
+// const addOne = (arr) => {
+//   // Solution code here...
+//   let newArr = arr.map(function(n) {
+//     return n + 1;
+//   });
+//   return newArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,7 +48,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  let newArr = arr.map(function (n) {
+  let newArr = arr.map(n => {
     return n +'?';
   });
   return newArr;
