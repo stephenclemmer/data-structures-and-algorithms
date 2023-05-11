@@ -25,7 +25,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.sort((a,b) =>
+  starWarsArr.sort((a, b) =>
     b.height - a.height
   );
   return starWarsArr;
@@ -68,7 +68,7 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
 
-  for (let i = 0; i < str.length+1; i++) {
+  for (let i = 0; i < str.length + 1; i++) {
 
     result.push(str.slice(i));
 
@@ -134,10 +134,12 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.forEach((i)=>{
+  recipe.ingredients.forEach((i) => {
+    /* The above code is finding the index of the second occurrence of a space character in a string
+    `i`, starting from the third character. The index is then stored in the variable `secondSpace`. */
     let secondSpace = i.indexOf(' ', 3);
     result.push(i.slice(secondSpace + 1));
-  })
+  });
   return result;
 };
 
